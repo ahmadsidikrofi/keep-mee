@@ -4,16 +4,18 @@
     import SearchNote from './SearchNote';
     import { nanoid } from 'nanoid';
     const NoteList = () => {
-        const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
-        // useEffect(() => {
-        //     const savedNotes = JSON.parse(localStorage.getItem('notes'));
-        //     if (savedNotes) {
-        //         setNotes(savedNotes);
-        //     }
-        // }, []);
+        const [notes, setNotes] = useState([]);
+        useEffect(() => {
+            const savedNotes = JSON.parse(localStorage.getItem('notes'));
+            if (savedNotes) {
+                setNotes(savedNotes);
+            }
+        }, []);
 
         useEffect(() => {
-            localStorage.setItem('notes', JSON.stringify(notes));
+            if (typeof window !== "undefined") {
+                localStorage.setItem('notes', JSON.stringify(notes));
+            }
         }, [notes]);
         
         const [searchNote, setSearchNote] = useState('');
