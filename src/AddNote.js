@@ -23,7 +23,7 @@
             <div className="note new">
                 <form onSubmit={handleSubmitNewNote}>
                     <textarea
-                        cols="30" rows="10"
+                        rows="10"
                         value={text}
                         onChange={handleNewNote}
                         placeholder="tulis note baru disini...">

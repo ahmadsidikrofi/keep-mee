@@ -52,19 +52,28 @@ code {
 .note.new {
 	background-color: #67d7cc;
 }
-@media screen and (max-width: 460px) {
-	.note.new {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 1rem;
-	}
-}
+
 textarea {
 	border: none;
 	resize: none;
 	background-color: #67d7cc;
+	width: 20em;
 }
-
+@media screen and (max-width: 460px) {
+	textarea {
+		width: 9.5em;
+	}
+}
+/* @media screen and (max-width: 1180px) {
+	textarea {
+		width: 16em;
+	}
+}
+@media screen and (max-width: 1024px) {
+	textarea {
+		width: 25em;
+	}
+} */
 textarea:focus {
 	outline: none;
 }
